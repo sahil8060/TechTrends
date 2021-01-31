@@ -1,0 +1,42 @@
+## Docker commands used to build the application 
+docker build -t techtrends .
+
+## Docker commands used to run the application
+docker run -d -p 7111:3111 techtrends
+
+## Docker commands used to get the application logs
+docker logs [CONTAINER_ID]
+
+## Logs from the container running the TechTrends application
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 485-499-100
+172.17.0.1 - - [31/Jan/2021 07:45:29] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [31/Jan/2021 07:45:29] "GET /static/css/main.css HTTP/1.1" 200 -
+172.17.0.1 - - [31/Jan/2021 07:45:29] "GET /favicon.ico HTTP/1.1" 404 -
+[2021-01-31 07:48:25,702] INFO in app: Health request successfull
+172.17.0.1 - - [31/Jan/2021 07:48:25] "GET /healthz HTTP/1.1" 200 -
+[2021-01-31 07:48:31,632] INFO in app: Metrics request successfull
+172.17.0.1 - - [31/Jan/2021 07:48:31] "GET /metrics HTTP/1.1" 200 -
+[2021-01-31 07:49:52,021] INFO in app: Article "2020 CNCF Annual Report" retrieved!
+172.17.0.1 - - [31/Jan/2021 07:49:52] "GET /1 HTTP/1.1" 200 -
+172.17.0.1 - - [31/Jan/2021 07:49:54] "GET /create HTTP/1.1" 200 -
+[2021-01-31 07:50:57,607] INFO in app: A new article "Apple Surpasses $100 Billion in Quarterly Sales" is created 
+172.17.0.1 - - [31/Jan/2021 07:50:57] "POST /create HTTP/1.1" 302 -
+172.17.0.1 - - [31/Jan/2021 07:50:57] "GET / HTTP/1.1" 200 -
+[2021-01-31 07:51:45,772] INFO in app: A non-existing article is accessed
+172.17.0.1 - - [31/Jan/2021 07:51:45] "GET /44 HTTP/1.1" 404 -
+[2021-01-31 07:52:07,851] INFO in app: The "About Us" page is retrieved
+172.17.0.1 - - [31/Jan/2021 07:52:07] "GET /about HTTP/1.1" 200 -
+172.17.0.1 - - [31/Jan/2021 07:52:17] "GET /create HTTP/1.1" 200 -
+[2021-01-31 07:52:18,703] INFO in app: Tentative to create an article without a title
+172.17.0.1 - - [31/Jan/2021 07:52:18] "POST /create HTTP/1.1" 200 -
+172.17.0.1 - - [31/Jan/2021 07:52:20] "GET / HTTP/1.1" 200 -
+[2021-01-31 07:53:04,073] INFO in app: Article "2020 CNCF Annual Report" retrieved!
+172.17.0.1 - - [31/Jan/2021 07:53:04] "GET /1 HTTP/1.1" 200 -
