@@ -40,5 +40,5 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: udacityproject/techtrends:github
+          tags: udacityproject/techtrends:latest
 
